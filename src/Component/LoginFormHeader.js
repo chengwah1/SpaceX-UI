@@ -1,5 +1,7 @@
 import React from 'react';
-import Avatar from './Avatar'
+
+// antd
+import { Avatar } from 'antd';
 
 // css
 import '../styles/LoginFormHeader.css'
@@ -7,7 +9,8 @@ import '../styles/LoginFormHeader.css'
 const LoginFormHeader = ()=>{
     return(
         <div className="LoginFormHeaderCSS">
-            <Avatar/>
+            <Avatar size={50} icon="rocket" />
+            <Avatar shape="square" size={64} icon="rocket" />
             <div className="LoginFormHeaderText">SpaceX Rockets</div>
         </div>
     )
