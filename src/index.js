@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'antd/lib/date-picker/style/css';
 import './styles/index.css';
 import App from './Component/App';
 import * as serviceWorker from './serviceWorker';
@@ -10,11 +11,6 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
-
-
-// const httpLink = createHttpLink({
-//     uri: 'https://api.spacex.land/graphql/'
-//   })
 
 const client = new ApolloClient({
     link: ApolloLink.from([

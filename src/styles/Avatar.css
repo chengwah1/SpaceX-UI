@@ -1,0 +1,11 @@
+.avatar{
+    background-color: black;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+.AvatarLogo{
+    margin-top:2px;
+    vertical-align: middle;
+}
