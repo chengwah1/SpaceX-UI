@@ -5,8 +5,12 @@ import { Button } from 'antd';
 import { Input } from 'antd';
 import { Divider } from 'antd';
 
+
 // Components
 import LoginFormHeader from './LoginFormHeader';
+
+// Style
+import '../styles/Login.css'
 
 const Login = ()=>{
     return(
@@ -16,7 +20,7 @@ const Login = ()=>{
             <Divider/>
             <Input placeholder="Username" />
             <Input.Password placeholder="input password" />
-            <Button type="primary">Login</Button>
+            <Button type="primary" block>Login</Button>          
         </div>
     )
 }

@@ -1,4 +1,17 @@
 .LoginCSS{
-    
-    margin:auto;
+    width: 90%;
+    margin: auto ;
+    transition: all 0.5s;
+}
+
+@media only screen and (min-width: 500px){
+    .LoginCSS{
+        width:60%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .LoginCSS{
+        width:40%;
+    }
 }
