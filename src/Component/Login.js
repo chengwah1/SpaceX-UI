@@ -1,6 +1,9 @@
 import React from 'react';
-import DatePicker from 'antd/lib/date-picker';
+
+// antd
 import { Button } from 'antd';
+import { Input } from 'antd';
+import { Divider } from 'antd';
 
 // Components
 import LoginFormHeader from './LoginFormHeader';
@@ -8,10 +11,12 @@ import LoginFormHeader from './LoginFormHeader';
 const Login = ()=>{
     return(
         <div className="LoginCSS">
+            <Divider/>
             <LoginFormHeader />
-            This is login page
-            <DatePicker />
-            <Button type="primary">Primary</Button>
+            <Divider/>
+            <Input placeholder="Username" />
+            <Input.Password placeholder="input password" />
+            <Button type="primary">Login</Button>
         </div>
     )
 }
