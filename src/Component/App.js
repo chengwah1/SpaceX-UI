@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 // Component
-import Test from './Test'
+import Test from './Test';
+import Login from './Login';
 import '../styles/App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Test/>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path="/" component={Login}/>
+          <Route path="/test" component={Test}/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
