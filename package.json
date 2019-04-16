@@ -13,6 +13,8 @@
     "customize-cra": "^0.2.12",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-app-rewired": "^2.1.1",
