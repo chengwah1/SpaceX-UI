@@ -1,7 +1,14 @@
 .LoginCSS{
-    width: 90%;
+    width: 80%;
     margin: auto ;
     transition: all 0.5s;
+}
+
+.passwordInputbox{
+    margin-top:20px;
+}
+.loginButton{
+    margin-top:20px;
 }
 
 @media only screen and (min-width: 500px){

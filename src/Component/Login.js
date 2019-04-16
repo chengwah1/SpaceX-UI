@@ -18,9 +18,9 @@ const Login = ()=>{
             <Divider/>
             <LoginFormHeader />
             <Divider/>
-            <Input placeholder="Username" />
-            <Input.Password placeholder="input password" />
-            <Button type="primary" block>Login</Button>          
+            <Input className="usernameInputbox" placeholder="Username" />
+            <Input.Password className="passwordInputbox" placeholder="input password" />
+            <Button className="loginButton" type="primary" block>Login</Button>          
         </div>
     )
 }
