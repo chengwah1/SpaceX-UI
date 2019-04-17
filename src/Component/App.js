@@ -13,12 +13,18 @@ class App extends Component {
     password:'',
     isLogin:false,
   }
+  toggleLogin=()=>{
+    this.setState(prevState=>({isLogin:!prevState.isLogin}))
+  }
   render() {
     return (
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route exact path="/" render={({history})=><Login history={history} LoginStatus = {this.state.isLogin}/>}/>
+            <Route exact path="/" render={({history})=><Login history={history} 
+            LoginStatus = {this.state.isLogin} 
+            toggleLogin={this.toggleLogin}/>}/>
+            
             <Route exact path={`/${this.state.username}`} component={Test}/>
             <Route component={NotFound}/>
           </Switch>

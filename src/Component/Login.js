@@ -29,6 +29,7 @@ class Login extends Component {
         // change URL
         let path = `${userName}`;
         this.props.history.push(path);
+        this.props.toggleLogin()
     }
 
     render(){
