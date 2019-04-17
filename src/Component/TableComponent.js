@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'antd';
 
-class Table extends Component {
+class TableComponent extends Component {
     state = {
         data: [],
         pagination: {},
@@ -41,4 +41,4 @@ class Table extends Component {
       }
 }
 
-export default Table;
+export default TableComponent;

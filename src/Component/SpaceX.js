@@ -1,7 +1,7 @@
 import React from 'react';
 // component
-import Panel from './Panel.js'
-
+import TableComponent from './TableComponent.js'
+// ant import
 import { Button } from 'antd';
 import { PageHeader } from 'antd';
 
@@ -16,7 +16,7 @@ const SpaceX = () => {
             onBack={() => null}
             title="List of SpaceX's Rockets"
             />
-            <Panel/>
+            <TableComponent/>
         </div>
     )
 }
