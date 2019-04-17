@@ -7,6 +7,8 @@ import Login from './Login';
 import NotFound from './NotFound';
 import '../styles/App.css';
 
+import SpaceX from './SpaceX.js'
+
 class App extends Component {
   state = {
     username:'ppp',
@@ -25,6 +27,7 @@ class App extends Component {
             LoginStatus = {this.state.isLogin} 
             toggleLogin={this.toggleLogin}/>}/>
             
+            <SpaceX/>
             <Route exact path={`/${this.state.username}`} component={Test}/>
             <Route component={NotFound}/>
           </Switch>
