@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // antd
 import { Button } from 'antd';
@@ -12,17 +12,38 @@ import LoginFormHeader from './LoginFormHeader';
 // Style
 import '../styles/Login.css'
 
-const Login = ()=>{
+class Login extends Component {
+    constructor(props) {
+        super(props);
+      }
+
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        // get user input
+        let userName = this.username.state.value;
+        let userPass = this.password.value;
+        let userInfo = {userName,userPass}
+        // save to local storage
+
+        // change URL
+        let path = `${userName}`;
+        this.props.history.push(path);
+    }
+
+    render(){
     return(
         <div className="LoginCSS">
             <Divider/>
             <LoginFormHeader />
             <Divider/>
-            <Input className="usernameInputbox" placeholder="Username" />
-            <Input.Password className="passwordInputbox" placeholder="input password" />
-            <Button className="loginButton" type="primary" block>Login</Button>          
+            <form onSubmit={this.handleSubmit}>
+            <Input className="usernameInputbox" placeholder="Username" ref = {(input) =>this.username=input}/>
+            <input type="password" className="passwordInputboxs" placeholder="Input password" minlength="8" required ref = {(input) =>this.password=input}/>
+            <Button className="loginButton" htmlType="submit" type="primary" block value="Submit">Login</Button>
+            </form>        
         </div>
     )
+    }
 }
 
 export default Login;

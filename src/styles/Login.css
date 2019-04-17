@@ -4,11 +4,28 @@
     transition: all 0.5s;
 }
 
-.passwordInputbox{
-    margin-top:20px;
-}
 .loginButton{
     margin-top:20px;
+}
+
+.passwordInputboxs{
+    padding-right: 30px;
+    overflow: visible;
+    background-color: #fff;
+    border-radius:4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(217, 217, 217);
+    color:rgba(0, 0, 0, 0.65);
+    font-family: inherit;
+    font-weight: 400px;
+    font-size:14px;
+    height:32px;
+    line-height:21px;
+    padding:4px 30px 4px 11px;
+    width: 100%;
+    margin-top: 20px;
+
 }
 
 @media only screen and (min-width: 500px){
