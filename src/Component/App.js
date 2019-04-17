@@ -9,7 +9,7 @@ import '../styles/App.css';
 class App extends Component {
 <<<<<<< HEAD
   state = {
-    username:'ppp',
+    username:'',
     password:'',
     isLogin:false
   }
@@ -22,7 +22,7 @@ class App extends Component {
 <<<<<<< HEAD
           <Switch>
             <Route exact path="/" component={Login}/>
-            <Route exact path={`/${this.state.username}`} component={Test}/>
+            <Route path="/test" component={Test}/>
             <Route component={NotFound}/>
           </Switch>
 =======
