@@ -18,7 +18,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Login}/>
+            <Route exact path="/" render={({history})=><Login history={history} LoginStatus = {this.state.isLogin}/>}/>
             <Route exact path={`/${this.state.username}`} component={Test}/>
             <Route component={NotFound}/>
           </Switch>

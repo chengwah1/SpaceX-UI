@@ -23,8 +23,9 @@ class Login extends Component {
         let userName = this.username.state.value;
         let userPass = this.password.value;
         let userInfo = {userName,userPass}
-        // save to local storage
-
+        if(this.props.LoginStatus===false){
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        }
         // change URL
         let path = `${userName}`;
         this.props.history.push(path);
