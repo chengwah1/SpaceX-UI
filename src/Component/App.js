@@ -9,7 +9,7 @@ import '../styles/App.css';
 
 class App extends Component {
   state = {
-    username:'',
+    username:'ppp',
     password:'',
     isLogin:false
   }
@@ -19,7 +19,7 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" component={Login}/>
-            <Route path="/test" component={Test}/>
+            <Route exact path={`/${this.state.username}`} component={Test}/>
             <Route component={NotFound}/>
           </Switch>
         </div>

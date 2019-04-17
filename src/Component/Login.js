@@ -1,8 +1,6 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import Form from './Form';
 // antd
-import { Button } from 'antd';
-import { Input } from 'antd';
 import { Divider } from 'antd';
 
 
@@ -13,14 +11,13 @@ import LoginFormHeader from './LoginFormHeader';
 import '../styles/Login.css'
 
 const Login = ()=>{
+
     return(
         <div className="LoginCSS">
             <Divider/>
             <LoginFormHeader />
             <Divider/>
-            <Input className="usernameInputbox" placeholder="Username" />
-            <Input.Password className="passwordInputbox" placeholder="input password" />
-            <Button className="loginButton" type="primary" block>Login</Button>          
+            <Form/>
         </div>
     )
 }
