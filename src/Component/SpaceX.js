@@ -11,7 +11,7 @@ import gql from 'graphql-tag'
 import '../styles/SpaceX.css';
 
 
-const SpaceX = () => {
+const SpaceX = ({LoginStatus, toggleLogin, history}) => {
     const QUERY =gql`
     {
       launchesPast(limit: 7) {
@@ -29,13 +29,28 @@ const SpaceX = () => {
       }
     }    
     `
+    const logout=()=>{
+      console.log(`${LoginStatus} and ${toggleLogin}`);
+      // clear local storage
+      localStorage.clear()
+      // clear state
+      if (LoginStatus===true) toggleLogin();
+      // redirect to login page
+      history.push('/')
+
+    }
+    
     return(
+      
         <div className="PageContent">
             <div className = "Header">
                 SpaceX Rockets
             </div>
             <div className = "PageContainer">
-            <Button className= "Logoutbtn" type="primary">Logout</Button>
+            <Button 
+            className= "Logoutbtn" 
+            type="primary" 
+            onClick={logout} >Logout</Button>
             <PageHeader
             onBack={() => null}
             title="List of SpaceX's Rockets"
