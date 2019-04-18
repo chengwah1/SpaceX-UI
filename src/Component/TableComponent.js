@@ -1,39 +1,59 @@
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import { query } from 'apollo-client'
-import gql from 'graphql-tag'
-import { Table } from 'antd';
+import { Table, Tag } from 'antd';
 
-const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
-  sorter: true,
-  render: name => `${name.first} ${name.last}`,
-  width: '20%',
-  },{
-  title: 'Description',
-  dataIndex: 'description',
-  },{
-    title: 'Status',
-    dataIndex: 'status',
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "rocket.rocket_name",
+    key: "name",
+    width: 150,
+
+    render: (text, record) => (
+      <div>
+        <a href={record.links.wikipedia}>{text}</a> <br />
+        <a href={record.links.wikipedia}>wiki link</a>
+      </div>
+    ),
+    sorter: (a, b) => a.rocket.rocket_name.length - b.rocket.rocket_name.length
+  },
+  {
+    title: "Description",
+    dataIndex: "details",
+    key: "details"
+  },
+  {
+    title: "Status",
+    dataIndex: "rocket.rocket.active",
+    key: "rocket.rocket.active",
+    width: 100,
+    render: text =>
+      text ? (
+        <Tag color="#34BE6F">ACTIVE</Tag>
+      ) : (
+        <Tag color="#34BE6F">NOT ACTIVE</Tag>
+      ),
     filters: [
-      { text: 'Active', value: 'true' },
-      { text: 'Not Active', value: 'false' },
+      {
+        text: "Active",
+        value: true
+      },
+      {
+        text: "Not Active",
+        value: false
+      }
     ],
-    width: '20%',
-    }];
+    filterMultiple: false,
+    onFilter: (value, record) => {
+      return record.rocket.rocket.active === value;
+    }
+  }
+];
 
 class TableComponent extends Component {
     state = {
         data: [],
         pagination: {},
-        loading: false,
       };
-      
-      componentDidMount() {
-        // fetch api
-        
-      }
 
       handleTableChange = (pagination, filters, sorter) => {
         // const pager = { ...this.state.pagination };
@@ -50,19 +70,13 @@ class TableComponent extends Component {
         // });
       }
 
-      fetch=()=>{
-        
-      }
-
       render() {
-        console.log(this.props)
         return (
           <Table
             columns={columns}
-            rowKey={record => record.login.uuid}
-            dataSource={this.state.data}
+            rowKey={record => record.id}
+            dataSource={this.props.objdata.launchesPast}
             pagination={this.state.pagination}
-            loading={this.state.loading}
             onChange={this.handleTableChange}
           />
         );

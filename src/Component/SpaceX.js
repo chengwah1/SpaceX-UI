@@ -7,21 +7,35 @@ import { PageHeader } from 'antd';
 // apollo
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+// css
+import '../styles/SpaceX.css';
+
 
 const SpaceX = () => {
     const QUERY =gql`
     {
-        launchesPast(limit: 3) {
-          id
+      launchesPast(limit: 2) {
+        id
+        rocket {
+          rocket_name
+          rocket {
+            active
+          }
         }
-      }      
+        links {
+          wikipedia
+        }
+        details
+      }
+    }    
     `
     return(
         <div>
-            <div>
+            <div className = "PageHeader">
                 SpaceX Rockets
                 <Button type="primary">Primary</Button>
             </div>
+            <div className = "PageContainer">
             <PageHeader
             onBack={() => null}
             title="List of SpaceX's Rockets"
@@ -32,7 +46,7 @@ const SpaceX = () => {
             if (error) return <div>Error</div>
             return <TableComponent objdata={data}/>}}
             </Query>
-            
+            </div>
         </div>
     )
 }
