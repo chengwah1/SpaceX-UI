@@ -14,7 +14,7 @@ import '../styles/SpaceX.css';
 const SpaceX = ({LoginStatus, toggleLogin, history}) => {
     const QUERY =gql`
     {
-      launchesPast(limit: 7) {
+      launchesPast(limit: 3) {
         id
         rocket {
           rocket_name
