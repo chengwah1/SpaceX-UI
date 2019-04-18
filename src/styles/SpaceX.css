@@ -38,3 +38,13 @@
 .ant-tag.ant-tag-has-color{
     cursor: default;
 }
+
+body{
+    background-color: #E5E5E5;
+}
+.ant-table-tbody{
+    background-color: #FFFFFF;
+}
+.ant-table-tbody:hover{
+    background-color: #FFFFFF;
+}
