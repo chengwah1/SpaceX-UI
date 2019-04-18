@@ -22,10 +22,9 @@ class Login extends Component {
         // get user input
         let userName = this.username.state.value;
         let userPass = this.password.value;
-        let userInfo = {userName,userPass}
-        if(this.props.LoginStatus===false){
-            localStorage.setItem('userInfo', JSON.stringify(userInfo));
-        }
+        let userInfo = {userName:userName,userPass:userPass}
+        this.props.setUserInfo(userInfo);
+        
         // change URL
         let path = `${userName}`;
         this.props.history.push(path);
