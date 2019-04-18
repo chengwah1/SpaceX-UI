@@ -45,3 +45,8 @@ body{
 .ant-table-tbody{
     background-color: #FFFFFF;
 }
+
+.pageNotFound{
+    margin-top:200px;
+    text-align: center;
+}
