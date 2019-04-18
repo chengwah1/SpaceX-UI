@@ -51,6 +51,7 @@ const SpaceX = ({LoginStatus, toggleLogin, history}) => {
             type="primary" 
             onClick={logout} >Logout</Button>
             <PageHeader
+            className= "PageHeadercss"
             onBack={() => null}
             title="List of SpaceX's Rockets"
             />
