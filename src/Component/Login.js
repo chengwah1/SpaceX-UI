@@ -34,9 +34,9 @@ class Login extends Component {
     render(){
     return(
         <div className="LoginCSS">
-            <Divider/>
+            <Divider  className="divider"/>
             <LoginFormHeader />
-            <Divider/>
+            <Divider className="divider"/>
             <form onSubmit={this.handleSubmit}>
             <Input className="usernameInputbox" placeholder="Username" ref = {(input) =>this.username=input}/>
             <input type="password" className="passwordInputboxs" placeholder="Input password" minlength="8" required ref = {(input) =>this.password=input}/>

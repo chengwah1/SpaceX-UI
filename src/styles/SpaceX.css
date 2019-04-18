@@ -50,3 +50,8 @@ body{
     margin-top:200px;
     text-align: center;
 }
+
+.divider{
+  height:2px;
+  background-color: #8d8da0;
+}
