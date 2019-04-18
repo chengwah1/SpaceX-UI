@@ -6,11 +6,11 @@ const columns = [
     title: "Name",
     dataIndex: "rocket.rocket_name",
     key: "name",
-    width: 150,
+    width: 130,
 
     render: (text, record) => (
       <div>
-        <a href={record.links.wikipedia}>{text}</a> <br />
+        {text} <br />
         <a href={record.links.wikipedia}>wiki link</a>
       </div>
     ),

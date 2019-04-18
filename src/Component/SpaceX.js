@@ -14,7 +14,7 @@ import '../styles/SpaceX.css';
 const SpaceX = () => {
     const QUERY =gql`
     {
-      launchesPast(limit: 2) {
+      launchesPast(limit: 7) {
         id
         rocket {
           rocket_name
@@ -30,12 +30,12 @@ const SpaceX = () => {
     }    
     `
     return(
-        <div>
-            <div className = "PageHeader">
+        <div className="PageContent">
+            <div className = "Header">
                 SpaceX Rockets
-                <Button type="primary">Primary</Button>
             </div>
             <div className = "PageContainer">
+            <Button className= "Logoutbtn" type="primary">Logout</Button>
             <PageHeader
             onBack={() => null}
             title="List of SpaceX's Rockets"

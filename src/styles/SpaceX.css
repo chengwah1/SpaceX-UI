@@ -1,14 +1,37 @@
-.PageHeader{
+.Header{
     margin: 0;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+    background-color: black;
+}
+.PageContent{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
-
-.PageContainer {
-
-
-    
+  
+.PageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-self: center;
+}
+.ant-page-header{
+    text-align: left;
 }
 
+.Logoutbtn{
+    background-color: #515151;
+    align-self: flex-end;
+    position: absolute;
+    top:17px;
+}
+.ant-tag.ant-tag-has-color{
+    cursor: default;
+}
