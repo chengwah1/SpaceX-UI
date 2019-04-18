@@ -37,7 +37,6 @@ const SpaceX = ({LoginStatus, toggleLogin, history}) => {
       if (LoginStatus===true) toggleLogin();
       // redirect to login page
       history.push('/')
-
     }
     
     return(

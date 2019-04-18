@@ -10,9 +10,18 @@ import SpaceX from './SpaceX.js'
 
 class App extends Component {
   state = {
-    username:'ppp',
+    username:'',
     password:'',
     isLogin:false,
+  }
+  componentDidMount=()=>{
+    let storage_userinfo =JSON.parse(window.localStorage.getItem('userInfo'));
+    if(storage_userinfo){
+      console.log(storage_userinfo)
+      this.setState({username:storage_userinfo.userName,
+      password:storage_userinfo.userPass,
+      isLogin:true
+    })}
   }
   toggleLogin=()=>{
     this.setState(prevState=>({isLogin:!prevState.isLogin}))
@@ -23,8 +32,7 @@ class App extends Component {
                   ()=>{
                     console.log(userInfo)
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
-                  }
-                  )
+                  })
   }
   render() {
     return (
@@ -36,7 +44,6 @@ class App extends Component {
             toggleLogin={this.toggleLogin}
             setUserInfo={this.setUserInfo}
             stateUserName={this.state.username} />}/>
-            
             
             <Route exact path={`/${this.state.username}`} render={({history})=><SpaceX
             history={history}
