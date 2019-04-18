@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Tag } from 'antd';
+import '../styles/TableComponent.css'
 
 const columns = [
   {
@@ -11,7 +12,7 @@ const columns = [
     render: (text, record) => (
       <div>
         {text} <br />
-        <a href={record.links.wikipedia}>wiki link</a>
+        <a className="wikilink" href={record.links.wikipedia}>wiki link</a>
       </div>
     ),
     sorter: (a, b) => a.rocket.rocket_name.length - b.rocket.rocket_name.length
@@ -50,34 +51,13 @@ const columns = [
 ];
 
 class TableComponent extends Component {
-    state = {
-        data: [],
-        pagination: {},
-      };
-
-      handleTableChange = (pagination, filters, sorter) => {
-        // const pager = { ...this.state.pagination };
-        // pager.current = pagination.current;
-        // this.setState({
-        //     pagination: pager,
-        // });
-        // this.fetch({
-        //     results: pagination.pageSize,
-        //     page: pagination.current,
-        //     sortField: sorter.field,
-        //     sortOrder: sorter.order,
-        //     ...filters,
-        // });
-      }
-
       render() {
         return (
           <Table
             columns={columns}
             rowKey={record => record.id}
             dataSource={this.props.objdata.launchesPast}
-            pagination={this.state.pagination}
-            onChange={this.handleTableChange}
+            pagination={false}
           />
         );
       }
