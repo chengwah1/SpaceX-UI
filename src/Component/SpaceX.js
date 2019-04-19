@@ -11,7 +11,7 @@ import gql from 'graphql-tag'
 import '../styles/SpaceX.css';
 
 
-const SpaceX = ({LoginStatus, toggleLogin, history}) => {
+const SpaceX = ({history, clearUserInfo}) => {
     const QUERY =gql`
     {
       launchesPast(limit: 3) {
@@ -30,13 +30,11 @@ const SpaceX = ({LoginStatus, toggleLogin, history}) => {
     }    
     `
     const logout=()=>{
-      console.log(`${LoginStatus} and ${toggleLogin}`);
       // clear local storage
-      localStorage.clear()
-      // clear state
-      if (LoginStatus===true) toggleLogin();
+      localStorage.clear();
+      clearUserInfo();
       // redirect to login page
-      history.push('/')
+      history.push('/');
     }
     
     return(

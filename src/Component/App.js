@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 // Component
 import Login from './Login';
 import NotFound from './NotFound';
-import '../styles/App.css';
+
 
 import SpaceX from './SpaceX.js'
 
@@ -34,6 +34,10 @@ class App extends Component {
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
                   })
   }
+  clearUserInfo=()=>{
+    this.setState({username:'',password:''})
+    if (this.state.isLogin===true) this.toggleLogin();
+  }
   render() {
     return (
       <BrowserRouter>
@@ -47,9 +51,7 @@ class App extends Component {
             
             <Route exact path={`/${this.state.username}`} render={({history})=><SpaceX
             history={history}
-            LoginStatus = {this.state.isLogin} 
-            toggleLogin={this.toggleLogin}
-            setUserInfo={this.setUserInfo} />}/>
+            clearUserInfo={this.clearUserInfo} />}/>
             
             <Route component={NotFound}/>
           </Switch>
