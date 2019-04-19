@@ -32,6 +32,7 @@ const SpaceX = ({history, clearUserInfo}) => {
     const logout=()=>{
       // clear local storage
       localStorage.clear();
+      // clear State
       clearUserInfo();
       // redirect to login page
       history.push('/');

@@ -17,7 +17,6 @@ class App extends Component {
   componentDidMount=()=>{
     let storage_userinfo =JSON.parse(window.localStorage.getItem('userInfo'));
     if(storage_userinfo){
-      console.log(storage_userinfo)
       this.setState({username:storage_userinfo.userName,
       password:storage_userinfo.userPass,
       isLogin:true
@@ -30,7 +29,6 @@ class App extends Component {
     this.setState({username:userInfo.userName,
                   password:userInfo.userPass},
                   ()=>{
-                    console.log(userInfo)
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
                   })
   }
